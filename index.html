@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotton Candy Bliss</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png" sizes="32x32" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 15px #38bdf8; }
+        50% { box-shadow: 0 0 25px #38bdf8; }
+      }
+      body {
+        background: url('https://www.transparenttextures.com/patterns/graphy.png');
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      h1, h2, h3, h4 {
+        font-family: "Impact", fantasy;
+      }
+      .old-style-border {
+        border: 3px double #00ffff;
+        box-shadow: inset 0 0 10px #00ffff;
+        background: linear-gradient(to bottom, #111, #333);
+      }
+      .blink {
+        animation: blinker 1s linear infinite;
+      }
+      @keyframes blinker {
+        50% { opacity: 0; }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.remove('opacity-0', 'translate-y-10');
+            card.classList.add('opacity-100', 'translate-y-0');
+          }, index * 300);
+        });
+      });
+    </script>
+  </head>
+  <body class="bg-gray-900 text-blue-100 font-sans text-sm">
+    <nav class="bg-black text-lime-300 p-2 old-style-border">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold blink">Cotton Candy Bliss</h1>
+        <ul class="flex space-x-2">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#products" class="hover:underline">Products</a></li>
+          <li><a href="#quotes" class="hover:underline">Reviews</a></li>
+          <li><a href="#about" class="hover:underline">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="container mx-auto px-4 py-12 text-center old-style-border mt-6 mb-10">
+      <h2 class="text-5xl font-bold text-green-400 mb-4">The Purest Cotton Candy-Flavored Rock Candy in Albuquerque</h2>
+      <p class="text-base italic mb-6">We craft the finest... rock candy. 99.1% pure bliss. Welcome to Cotton Candy Bliss.</p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png"
+        alt="Walter White"
+        class="mx-auto rounded shadow-lg w-60 h-80 object-cover border-4 border-cyan-300"
+      />
+    </section>
+
+    <section id="products" class="container mx-auto px-4 py-10 mb-12">
+      <h3 class="text-4xl text-center font-semibold text-green-300 mb-6">Our Signature Rock Candy Blends</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="product-card bg-gray-700 p-4 rounded shadow-md transform opacity-0 translate-y-10 transition duration-700 old-style-border">
+          <img src="https://www.ohnuts.com/noapp/showImage.cfm/zoom/Blue%20Rock%20Candy%20Crystals3.jpg" alt="Blue Rock Candy Crystal" class="rounded mb-2 w-full h-60 object-cover" />
+          <h4 class="text-2xl font-bold text-cyan-400">Blue Mint Bliss</h4>
+          <p class="italic">"Yo! These are the bomb!" - Jesse Pinkman</p>
+        </div>
+        <div class="product-card bg-gray-700 p-4 rounded shadow-md transform opacity-0 translate-y-10 transition duration-700 old-style-border">
+          <img src="https://i.pinimg.com/736x/51/c7/d6/51c7d68ae2b036d6368176b8674fc7d1.jpg" alt="Rock Candy Crystal" class="rounded mb-2 w-full h-60 object-cover" />
+          <h4 class="text-2xl font-bold text-cyan-400">Heisenberg’s Choice</h4>
+          <p class="italic">"Say my name." – Heisenberg</p>
+        </div>
+        <div class="product-card bg-gray-700 p-4 rounded shadow-md transform opacity-0 translate-y-10 transition duration-700 old-style-border">
+          <img src="https://www.serenarecipes.com/wp-content/uploads/2025/03/Breaking-Bads-Heisenberg-Blue-Rock-Candy-Clusters-6.png" alt="Blue Rock Candy Clusters" class="rounded mb-2 w-full h-60 object-cover" />
+          <h4 class="text-2xl font-bold text-cyan-400">99.1% Pure Danger</h4>
+          <p class="italic">"I'm not in danger, Skyler. I am the danger."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="bg-yellow-200 text-black py-10 old-style-border mb-12">
+      <div class="container mx-auto px-4 text-center">
+        <h3 class="text-4xl text-green-300 font-semibold mb-8">Customer Reactions</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <blockquote class="bg-gray-800 text-blue-100 p-4 rounded shadow-md border border-blue-400">
+            "You clearly don't know who you're talking to, so let me clue you in. This candy? Next level." – Walter White
+          </blockquote>
+          <blockquote class="bg-gray-800 text-pink-200 p-4 rounded shadow-md border border-pink-400">
+            "Yeah Mr. White! YEAH SCIENCE!" – Jesse Pinkman
+          </blockquote>
+          <blockquote class="bg-gray-800 text-green-200 p-4 rounded shadow-md border border-green-400">
+            "Every bag is like an explosion of chemistry and joy." – Gus Fring
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container mx-auto px-4 py-10 text-center old-style-border mb-12">
+      <h3 class="text-4xl font-semibold text-green-300 mb-4">The Heisenberg Legacy</h3>
+      <div class="flex flex-col items-center gap-4">
+        <img
+          src="https://static.wikia.nocookie.net/breakingbad/images/0/05/Season_2_-_Jesse.jpg/"
+          alt="Jesse Pinkman"
+          class="w-32 h-32 object-cover rounded-full border-4 border-blue-400"
+        />
+        <p class="max-w-2xl text-sm">
+          Forged in an RV deep in the deserts of New Mexico, Cotton Candy Bliss is the pinnacle of rock candy engineering. Walter White and Jesse Pinkman have crafted a legacy of flavor unmatched by any carnival.
+        </p>
+      </div>
+    </section>
+
+    <footer class="bg-black p-4 text-center text-sm text-lime-300 old-style-border w-full">
+      <p>&copy; 2025 Cotton Candy Bliss. All rights reserved. My name is Gus Fring, but you can call me Gus.</p>
+    </footer>
+  </body>
+</html>
